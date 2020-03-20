@@ -5,7 +5,6 @@ from tweepy import Cursor
 import twitter_credentials
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import json
 import requests
 import argparse
@@ -14,6 +13,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('NUMBER', help="Max number of tweets to query")
 parser.add_argument('QUERY', help="String to query")
+parser.add_argument('OUTPUT', help="Path to output csv")
 args = parser.parse_args()
 
 # # # # TWITTER CLIENT # # # #
@@ -101,11 +101,4 @@ if __name__ == '__main__':
 # Add Latitude, Longitude, and Names of User Locations to Data Frame and CSV
     coords_df = tweet_analyzer.geo_data_to_df(Places, Lat, Lon)
     print(coords_df)
-    coords_df.to_csv(r'/Users/jerryoates/Documents/tweet_coordinates.csv')
-    """
-    print("Lat: {}".format(next(iter(item.values())))["lat"])
-    print("Lon: {}".format(next(iter(item.values())))["lon"])
-    print("\n")
-    Lat.append(next(iter(item.values()))["lat"])
-    Lon.append(next(iter(item.values()))["lon"])
-    """
+    coords_df.to_csv(r'args.OUTPUT')

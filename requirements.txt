@@ -1,0 +1,6 @@
+numpy
+tweepy
+pandas
+json
+requests
+argparse
