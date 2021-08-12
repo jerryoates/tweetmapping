@@ -10,9 +10,9 @@ A script for geocoding twitter user locations across keyworded queries.
 ```
 # Run Script
 
-Example Run
+Example Run. Takes three arguments: number of tweets to collect, keyword for search, and name of output csv.
 
 ```
-python tweetmapper.py 1000 'Trump' 'trumptweets.csv'
+python3 tweetmapper.py 1000 'Covid 19' 'covidtweets.csv'
 
 ```
